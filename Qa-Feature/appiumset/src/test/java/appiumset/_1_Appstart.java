@@ -18,6 +18,7 @@ import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.ScreenOrientation;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -56,7 +57,7 @@ public class _1_Appstart extends _2_Deviceinfo {
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	public void Appstart() throws InterruptedException, NullPointerException, NoSuchElementException {
+	public void Appstart() throws InterruptedException, NullPointerException, NoSuchElementException/*, StaleElementReferenceException*/ {
 	
 		
 		
@@ -68,21 +69,22 @@ public class _1_Appstart extends _2_Deviceinfo {
 		_8_Eventtribes a08 = new _8_Eventtribes();
 		_9_Logout a09 = new _9_Logout();
 
-		int count = 0;
+		
 		
 		
 		try {
 			a03.onboarding();
 			
-			for(int i = 1; true; i = i++) {
-
-				count = count + i;
 			
-				if( count <= 100) {
-					System.out.println(" <<<<< " + count + " 번째 반복 시작합니다.>>>> ");
+			for(int i=1; i<=100; i++) {
+
 				
-				}else if(count == 101) {
-					System.out.println( count-1 + "번째 반복 완료 후 종료합니다.");
+				
+				if(i <= 100) {
+					System.out.println(" <<<<< " + i + " 번째 반복 시작합니다.>>>> ");
+				
+				}else if(i > 100) {
+					System.out.println( i + "번째 반복 완료 후 종료합니다.");
 					break;
 					
 				}
