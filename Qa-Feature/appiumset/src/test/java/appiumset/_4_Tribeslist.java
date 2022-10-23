@@ -1,13 +1,23 @@
 package appiumset;
 
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class _4_Tribeslist extends _1_Appstart { 
+	
+	
+	@Test
 	public void tribeslist() throws MalformedURLException, InterruptedException  {
+		
+//		AppiumDriver<MobileElement> driver = AppiumDriverManager.getDriver().get();
+		AppiumDriver<MobileElement> driver = AppiumDriverManager.appiumDriver.get();
 		
 		System.out.println("_4_tribeslist Start");
 		
@@ -15,12 +25,12 @@ public class _4_Tribeslist extends _1_Appstart {
 		MobileElement kakao = driver.findElementByAccessibilityId("카카오로 시작하기 로고");
 		kakao.click();
 		System.out.println("카카오 시작하기 로고 클릭 완료");
-		 		                 
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); 		                 
 
 		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.Button")
 		.click();
 		System.out.println("카카오 계속하기 클릭 완료 ");
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
 		
 		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]")

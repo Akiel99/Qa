@@ -2,10 +2,19 @@ package appiumset;
 
 import java.net.MalformedURLException;
 
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class _9_Logout extends _1_Appstart {
+	
+	@Test
 	public void Logout() throws MalformedURLException, InterruptedException {
+		
+//		AppiumDriver<MobileElement> driver = AppiumDriverManager.getDriver().get();
+		AppiumDriver<MobileElement> driver = AppiumDriverManager.appiumDriver.get();
+		
 		MobileElement settings3 = driver.findElementByAccessibilityId("setting in TopBar");
 		settings3.click();
 		System.out.println("설정 입력3");

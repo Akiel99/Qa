@@ -2,14 +2,21 @@ package appiumset;
 
 import java.net.MalformedURLException;
 
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 
 public class _6_Tribeshome extends _1_Appstart {
 
+	@Test
 	public void tribeshome() throws MalformedURLException, InterruptedException  {
 
+//		AppiumDriver<MobileElement> driver = AppiumDriverManager.getDriver().get();
+		AppiumDriver<MobileElement> driver = AppiumDriverManager.appiumDriver.get();
+		
 		System.out.println("_6_tribeshome Start");
 
 		
