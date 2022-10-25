@@ -19,6 +19,10 @@ adb uninstall io.appium.uiautomator2.server
 adb uninstall io.appium.uiautomator2.server.test  
 
 
+< 프로젝트 임포트 시, 자바 빌드 패스 없을 때 > 
+1) Right click -> Properties
+2) Project Facets -> Check Dyanmic Web Module and Java Version(java version만 추가해도 될 듯)
+3) Apply Setting.
 
 
 < AWS Device Farm >   
